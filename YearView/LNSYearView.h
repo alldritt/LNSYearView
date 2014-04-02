@@ -32,6 +32,7 @@
 @property (assign, nonatomic) BOOL showDates;
 @property (assign, nonatomic) BOOL usesAlternatingMonthBackgroundColors;
 @property (assign, nonatomic) BOOL selectable;
+@property (assign, nonatomic) BOOL drawsBackground;
 @property (assign, nonatomic) NSDate* selectedDate;
 @property (weak, nonatomic) id<LNSYearViewDataSource> dataSource;
 @property (weak, nonatomic) id<LNSYearViewDelegate> delegate;

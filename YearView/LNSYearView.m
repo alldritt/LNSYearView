@@ -149,8 +149,10 @@
 - (BOOL)isFlipped { return YES; }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    [self.backgroundColor set];
-    NSRectFill(dirtyRect);
+    if (self.drawsBackground) {
+        [self.backgroundColor set];
+        NSRectFill(dirtyRect);
+    }
     
     NSRect frame = self.frame;
     CGFloat fontSize = floor(self.gridSize * kFontScaleFactor);
@@ -608,5 +610,7 @@
     
     [self setFrameSize:NSMakeSize(width, height)];
 }
+
+- (BOOL)isOpaque { return self.drawsBackground; }
 
 @end
