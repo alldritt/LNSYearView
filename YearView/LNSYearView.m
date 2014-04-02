@@ -181,6 +181,10 @@
     CGFloat xPos = floor((NSWidth(frame) - cellSize * weeksInYear.length) / 2.0 + 0.5);
     CGFloat yPos = floor((NSHeight(frame) - cellSize * kDaysInWeek + kMonthNameYSpace + [@"X" sizeWithAttributes:monthAttrs].height) / 2.0 + 0.5);
     
+    if ([self.dataSource respondsToSelector:@selector(legendColorsForYearView:)] || self.title.length > 0) {
+        yPos -= (kLegentVSpace + cellSize) / 2.0;
+    }
+    
     //  Draw day names
     if (self.showWeekdays) {
         NSArray* weekdays = [self _weekdayNames];
@@ -206,10 +210,6 @@
         }
     }
     
-    if ([self.dataSource respondsToSelector:@selector(legendColorsForYearView:)] || self.title.length > 0) {
-        yPos -= (kLegentVSpace + cellSize) / 2.0;
-    }
-
     NSUInteger monthIndex = 0;
 
     //  Iterate over the months in this year
