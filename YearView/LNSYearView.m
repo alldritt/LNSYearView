@@ -126,6 +126,7 @@
     self.gridSpace = 2.0;
     self.showWeekdays = YES;
     self.showDates = YES;
+    self.showYears = YES;
     self.usesAlternatingMonthBackgroundColors = YES;
     
     self.calendar = [NSCalendar currentCalendar];
@@ -217,13 +218,15 @@
     //  Iterate over the months in this year
     for (NSUInteger m = monthOfYear; m <= monthsInYear.length; ++m, ++monthIndex) {
         NSString* monthName = months[m - 1];
-        NSSize monthSize = [monthName sizeWithAttributes:monthAttrs];
         dateComps.month = m;
         dateComps.day = 1;
         NSDate* date = [self.calendar dateFromComponents:dateComps];
         NSRange daysInMonth = [self.calendar rangeOfUnit:NSDayCalendarUnit
                                                   inUnit:NSMonthCalendarUnit
                                                  forDate:date];
+        if (m == monthOfYear && self.showYears)
+            monthName = [NSString stringWithFormat:@"%@ %d", monthName, (int)[self.calendar component:NSCalendarUnitYear fromDate:date]];
+        NSSize monthSize = [monthName sizeWithAttributes:monthAttrs];
         NSUInteger firstWeekOfMonth = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:date];
         NSUInteger firstWeekdayOfMonth = [self.calendar component:NSCalendarUnitWeekday fromDate:date];
         dateComps.day = daysInMonth.length;
@@ -303,13 +306,15 @@
 
     for (NSUInteger m = 1; m < monthOfYear; ++m, ++monthIndex) {
         NSString* monthName = months[m - 1];
-        NSSize monthSize = [monthName sizeWithAttributes:monthAttrs];
         dateComps.month = m;
         dateComps.day = 1;
         NSDate* date = [self.calendar dateFromComponents:dateComps];
         NSRange daysInMonth = [self.calendar rangeOfUnit:NSDayCalendarUnit
                                                   inUnit:NSMonthCalendarUnit
                                                  forDate:date];
+        if (m == 1 && self.showYears)
+            monthName = [NSString stringWithFormat:@"%@ %d", monthName, (int)[self.calendar component:NSCalendarUnitYear fromDate:date]];
+        NSSize monthSize = [monthName sizeWithAttributes:monthAttrs];
         NSUInteger firstWeekOfMonth = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:date] - 1;
         NSUInteger firstWeekdayOfMonth = [self.calendar component:NSCalendarUnitWeekday fromDate:date];
         dateComps.day = daysInMonth.length;
@@ -555,6 +560,13 @@
 - (void)setShowDates:(BOOL)showDates {
     if (self.showDates != showDates) {
         _showDates = showDates;
+        [self setNeedsDisplay:YES];
+    }
+}
+
+- (void)setShowYears:(BOOL)showYears {
+    if (self.showYears != showYears) {
+        _showYears = showYears;
         [self setNeedsDisplay:YES];
     }
 }

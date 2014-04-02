@@ -30,6 +30,7 @@
 @property (assign, nonatomic) CGFloat gridBorderSize;
 @property (assign, nonatomic) BOOL showWeekdays;
 @property (assign, nonatomic) BOOL showDates;
+@property (assign, nonatomic) BOOL showYears;
 @property (assign, nonatomic) BOOL usesAlternatingMonthBackgroundColors;
 @property (assign, nonatomic) BOOL selectable;
 @property (assign, nonatomic) BOOL drawsBackground;
