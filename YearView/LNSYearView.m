@@ -41,6 +41,10 @@
     return months;
 }
 
+- (BOOL)_hasLegend {
+    return [self.dataSource respondsToSelector:@selector(legendColorsForYearView:)] && [self.dataSource legendColorsForYearView:self].count > 0;
+}
+
 - (NSDate*)_dateForLocation:(NSPoint) location {
     NSRect frame = self.frame;
     CGFloat fontSize = floor(self.gridSize * kFontScaleFactor);
@@ -70,7 +74,7 @@
         xPos += (kDayNameHSpace + maxDayNameWidth) / 2.0;
     }
     
-    if ([self.dataSource respondsToSelector:@selector(legendColorsForYearView:)] || self.title.length > 0) {
+    if (self._hasLegend || self.title.length > 0) {
         yPos -= (kLegentVSpace + cellSize) / 2.0;
     }
 
@@ -151,7 +155,6 @@
     NSRect frame = self.frame;
     CGFloat fontSize = floor(self.gridSize * kFontScaleFactor);
     NSRange weeksInYear = [self.calendar rangeOfUnit:NSWeekCalendarUnit inUnit:NSYearCalendarUnit forDate:self.startDate];
-    NSUInteger year = [self.calendar component:NSCalendarUnitYear fromDate:self.startDate];
     NSArray* months = [self _monthNames];
     NSDictionary* monthAttrs = @{NSFontAttributeName: self.font ? self.font : [NSFont systemFontOfSize:fontSize],
                                  NSForegroundColorAttributeName: self.monthTextColor};
@@ -161,6 +164,7 @@
     NSDate* startDate = [self.calendar dateFromComponents:dateComps];
     NSUInteger startDay = [self.calendar component:NSCalendarUnitDay fromDate:startDate];
     NSUInteger startMonth = [self.calendar component:NSCalendarUnitMonth fromDate:startDate];
+    NSUInteger startYear = [self.calendar component:NSCalendarUnitYear fromDate:startDate];
     NSUInteger startWeekday = [self.calendar component:NSCalendarUnitWeekday fromDate:startDate];
     NSUInteger startWeekOfYear = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:startDate];
     NSUInteger startMonthOfYear = [self.calendar component:NSCalendarUnitMonth fromDate:startDate];
@@ -172,7 +176,7 @@
     CGFloat xPos = floor((NSWidth(frame) - cellSize * weeksInYear.length) / 2.0 + 0.5);
     CGFloat yPos = floor((NSHeight(frame) - cellSize * kDaysInWeek + kMonthNameYSpace + [@"X" sizeWithAttributes:monthAttrs].height) / 2.0 + 0.5);
     
-    if ([self.dataSource respondsToSelector:@selector(legendColorsForYearView:)] || self.title.length > 0) {
+    if (self._hasLegend || self.title.length > 0) {
         yPos -= (kLegentVSpace + cellSize) / 2.0;
     }
     
@@ -213,7 +217,7 @@
 
             dateComps.weekOfYear = weekIndex + startWeekOfYear;
             dateComps.weekday = weekday;
-            dateComps.yearForWeekOfYear = year;
+            dateComps.yearForWeekOfYear = startYear;
             
             NSDate* date = [self.calendar dateFromComponents:dateComps];
             NSColor* dayColor = [self.dataSource yearView:self colorForDate:date];
@@ -225,8 +229,9 @@
 
             if (weekday == 1 && day < 8) {
                 NSUInteger month = [self.calendar component:NSCalendarUnitMonth fromDate:date];
+                NSUInteger year = [self.calendar component:NSCalendarUnitYear fromDate:date];
                 NSString* monthName = months[month - 1];
-                if ((month == startMonthOfYear || month == 1) && self.showYears)
+                if (((month == startMonthOfYear && year == startYear) || (month == 1 && year > startYear)) && self.showYears)
                     monthName = [NSString stringWithFormat:@"%@ %d", monthName, (int)[self.calendar component:NSCalendarUnitYear fromDate:date]];
                 NSSize monthSize = [monthName sizeWithAttributes:monthAttrs];
 
@@ -264,7 +269,7 @@
     
     //  Draw the legend
     CGFloat legendLeft = 0;
-    if ([self.dataSource respondsToSelector:@selector(legendColorsForYearView:)]) {
+    if (self._hasLegend) {
         NSArray* colors = [self.dataSource legendColorsForYearView:self];
         NSString* leftLabel = [self.dataSource respondsToSelector:@selector(leftLegentLabelForYearView:)] ? [self.dataSource leftLegentLabelForYearView:self] : @"<";
         NSSize leftLabelSize = [leftLabel sizeWithAttributes:monthAttrs];
@@ -483,7 +488,7 @@
     }
 
     CGFloat width = (self.showWeekdays ? maxDayNameWidth + kDayNameHSpace : 0.0) + weeksInYear.length * cellSize;
-    CGFloat height = monthSize.height + kMonthNameYSpace + cellSize * kDaysInWeek + ([self.dataSource respondsToSelector:@selector(legendColorsForYearView:)] || self.title.length > 0 ? kLegentVSpace + cellSize : 0.0);
+    CGFloat height = monthSize.height + kMonthNameYSpace + cellSize * kDaysInWeek + (self._hasLegend || self.title.length > 0 ? kLegentVSpace + cellSize : 0.0);
     
     [self setFrameSize:NSMakeSize(width, height)];
 }
