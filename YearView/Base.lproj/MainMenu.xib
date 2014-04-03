@@ -765,12 +765,12 @@
                     <button translatesAutoresizingMaskIntoConstraints="NO" id="Dak-O6-W78">
                         <rect key="frame" x="723" y="11" width="179" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Use Alternating Month Colors" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="8BO-F3-dXX">
+                        <buttonCell key="cell" type="check" title="Show Years" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="8BO-F3-dXX">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="smallSystem"/>
                         </buttonCell>
                         <connections>
-                            <binding destination="Voe-Tx-rLC" name="value" keyPath="yearView.usesAlternatingMonthBackgroundColors" id="Z4N-UC-euW"/>
+                            <binding destination="Voe-Tx-rLC" name="value" keyPath="yearView.showYears" id="lDZ-3Q-EIy"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xk2-Gd-isW">

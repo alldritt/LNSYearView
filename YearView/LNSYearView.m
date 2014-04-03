@@ -44,24 +44,16 @@
 - (NSDate*)_dateForLocation:(NSPoint) location {
     NSRect frame = self.frame;
     CGFloat fontSize = floor(self.gridSize * kFontScaleFactor);
-    NSRange weeksInYear = [self.calendar rangeOfUnit:NSWeekCalendarUnit inUnit:NSYearCalendarUnit forDate:self.startDate];
     NSDictionary* monthAttrs = @{NSFontAttributeName: self.font ? self.font : [NSFont systemFontOfSize:fontSize],
                                  NSForegroundColorAttributeName: self.monthTextColor};
 
     //  Generate a NSDate referring to the first day of self.startDate's month
     NSDateComponents* dateComps = [self.calendar components:NSCalendarUnitYear |
                                                             NSCalendarUnitMonth |
-                                                            NSCalendarUnitDay |
-                                                            NSCalendarUnitHour |
-                                                            NSCalendarUnitMinute |
-                                                            NSCalendarUnitSecond
+                                                            NSCalendarUnitDay
                                                    fromDate:self.startDate];
-    
-    dateComps.day = 1;
-    dateComps.hour = 0;
-    dateComps.minute = 0;
-    dateComps.second = 0;
     NSDate* startDate = [self.calendar dateFromComponents:dateComps];
+    NSRange weeksInYear = [self.calendar rangeOfUnit:NSWeekCalendarUnit inUnit:NSYearCalendarUnit forDate:self.startDate];
     //    NSUInteger month = [self.calendar component:NSCalendarUnitMonth fromDate:startDate];
     CGFloat cellSize = self.gridSpace + self.gridBorderSize * 2.0 + self.gridSize;
     CGFloat xPos = floor((NSWidth(frame) - cellSize * weeksInYear.length) / 2.0 + 0.5);
@@ -86,6 +78,7 @@
         location.y >= yPos && location.y <= yPos + kDaysInWeek * cellSize) {
         NSUInteger year = [self.calendar component:NSCalendarUnitYear fromDate:startDate];
         NSUInteger month = [self.calendar component:NSCalendarUnitMonth fromDate:startDate];
+        NSUInteger day = [self.calendar component:NSCalendarUnitDay fromDate:startDate];
         NSUInteger weekOfYear = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:startDate];
         NSUInteger week = (location.x - xPos) / cellSize + weekOfYear; // X
         NSUInteger weekday = (location.y - yPos) / cellSize + 1; // Y
@@ -100,12 +93,13 @@
         NSDate* date = [self.calendar dateFromComponents:dateComps];
         NSUInteger dateYear = [self.calendar component:NSCalendarUnitYear fromDate:date];
         NSUInteger dateMonth = [self.calendar component:NSCalendarUnitMonth fromDate:date];
+        NSUInteger dateDay = [self.calendar component:NSCalendarUnitDay fromDate:date];
         
-        if (dateYear == year && dateMonth < month)
+        if (dateYear == year && dateMonth == month && dateDay < day)
             return nil; // user clicked before the first month
         else if (month == 1 && dateYear > year)
             return nil; // user clicked after the last month
-        else if (dateYear > year && dateMonth >= month)
+        else if (dateYear > year && dateMonth == month && dateDay > day)
             return nil; // user clicked after the last month
         else
             return date;
@@ -127,7 +121,6 @@
     self.showWeekdays = YES;
     self.showDates = YES;
     self.showYears = YES;
-    self.usesAlternatingMonthBackgroundColors = YES;
     
     self.calendar = [NSCalendar currentCalendar];
     self.calendar.minimumDaysInFirstWeek = 1;
@@ -158,27 +151,22 @@
     NSRect frame = self.frame;
     CGFloat fontSize = floor(self.gridSize * kFontScaleFactor);
     NSRange weeksInYear = [self.calendar rangeOfUnit:NSWeekCalendarUnit inUnit:NSYearCalendarUnit forDate:self.startDate];
-    NSRange monthsInYear = [self.calendar rangeOfUnit:NSMonthCalendarUnit inUnit:NSYearCalendarUnit forDate:self.startDate];
-    NSUInteger month = [self.calendar component:NSCalendarUnitMonth fromDate:self.startDate];
-    NSArray* alternatingMonthColors = [self.dataSource respondsToSelector:@selector(alternatingMonthColorsForYearView:)] ? [self.dataSource alternatingMonthColorsForYearView:self] : [NSColor controlAlternatingRowBackgroundColors];
+    NSUInteger year = [self.calendar component:NSCalendarUnitYear fromDate:self.startDate];
     NSArray* months = [self _monthNames];
     NSDictionary* monthAttrs = @{NSFontAttributeName: self.font ? self.font : [NSFont systemFontOfSize:fontSize],
                                  NSForegroundColorAttributeName: self.monthTextColor};
 
     //  Generate a NSDate referring to the first day of self.startDate's month
-    NSDateComponents* dateComps = [self.calendar components:NSCalendarUnitMonth | NSCalendarUnitYear fromDate:self.startDate];
-
-    dateComps.month = month;
-    dateComps.day = 1;
-    dateComps.hour = 0;
-    dateComps.minute = 0;
-    dateComps.second = 0;
+    NSDateComponents* dateComps = [self.calendar components:NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear fromDate:self.startDate];
     NSDate* startDate = [self.calendar dateFromComponents:dateComps];
+    NSUInteger startDay = [self.calendar component:NSCalendarUnitDay fromDate:startDate];
+    NSUInteger startMonth = [self.calendar component:NSCalendarUnitMonth fromDate:startDate];
+    NSUInteger startWeekday = [self.calendar component:NSCalendarUnitWeekday fromDate:startDate];
+    NSUInteger startWeekOfYear = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:startDate];
+    NSUInteger startMonthOfYear = [self.calendar component:NSCalendarUnitMonth fromDate:startDate];
     
     dateComps = [self.calendar components:NSCalendarUnitMonth | NSCalendarUnitYear | NSWeekdayCalendarUnit fromDate:startDate];
 
-    NSUInteger weekOfYear = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:startDate];
-    NSUInteger monthOfYear = [self.calendar component:NSCalendarUnitMonth fromDate:startDate];
 
     CGFloat cellSize = self.gridSpace + self.gridBorderSize * 2.0 + self.gridSize;
     CGFloat xPos = floor((NSWidth(frame) - cellSize * weeksInYear.length) / 2.0 + 0.5);
@@ -195,9 +183,8 @@
                                    NSForegroundColorAttributeName: self.dayTextColor};
         CGFloat maxDayNameWidth = 0.0;
 
-        for (NSString* dayName in weekdays) {
+        for (NSString* dayName in weekdays)
             maxDayNameWidth = MAX([dayName sizeWithAttributes:dayAttrs].width, maxDayNameWidth);
-        }
         maxDayNameWidth = ceil(maxDayNameWidth);
         xPos += (kDayNameHSpace + maxDayNameWidth) / 2.0;
         
@@ -212,166 +199,65 @@
             }
         }
     }
-    
-    NSUInteger monthIndex = 0;
 
-    //  Iterate over the months in this year
-    for (NSUInteger m = monthOfYear; m <= monthsInYear.length; ++m, ++monthIndex) {
-        NSString* monthName = months[m - 1];
-        dateComps.month = m;
-        dateComps.day = 1;
-        NSDate* date = [self.calendar dateFromComponents:dateComps];
-        NSRange daysInMonth = [self.calendar rangeOfUnit:NSDayCalendarUnit
-                                                  inUnit:NSMonthCalendarUnit
-                                                 forDate:date];
-        if (m == monthOfYear && self.showYears)
-            monthName = [NSString stringWithFormat:@"%@ %d", monthName, (int)[self.calendar component:NSCalendarUnitYear fromDate:date]];
-        NSSize monthSize = [monthName sizeWithAttributes:monthAttrs];
-        NSUInteger firstWeekOfMonth = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:date];
-        NSUInteger firstWeekdayOfMonth = [self.calendar component:NSCalendarUnitWeekday fromDate:date];
-        dateComps.day = daysInMonth.length;
-        date = [self.calendar dateFromComponents:dateComps];
-        NSUInteger lastWeekOfMonth = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:date];
-        NSUInteger lastWeekdayOfMonth = [self.calendar component:NSCalendarUnitWeekday fromDate:date];
-        
-        if (lastWeekOfMonth < firstWeekOfMonth)
-            lastWeekOfMonth = weeksInYear.length;
+    dateComps = [self.calendar components:NSCalendarUnitYear |
+                                          NSCalendarUnitWeekOfYear |
+                                          NSCalendarUnitWeekday
+                                 fromDate:startDate];
 
-        //  Calculate the border of the month
-        if (self.usesAlternatingMonthBackgroundColors && alternatingMonthColors) {
-            [(NSColor*)alternatingMonthColors[monthIndex % alternatingMonthColors.count] set];
-            NSRectFill(NSMakeRect(xPos + (firstWeekOfMonth - weekOfYear) * cellSize,
-                                  yPos + cellSize * (firstWeekdayOfMonth - 1) - (firstWeekdayOfMonth == 1 ? kMonthNameYSpace + monthSize.height : 0.0),
-                                  cellSize,
-                                  (kDaysInWeek + 1 - firstWeekdayOfMonth) * cellSize + (firstWeekdayOfMonth == 1 ? kMonthNameYSpace + monthSize.height : 0.0)));
-            NSRectFill(NSMakeRect(xPos + (firstWeekOfMonth - weekOfYear + 1) * cellSize,
-                                  yPos - kMonthNameYSpace - monthSize.height,
-                                  (lastWeekOfMonth - firstWeekOfMonth - 1) * cellSize,
-                                  kDaysInWeek * cellSize + kMonthNameYSpace + monthSize.height));
-            NSRectFill(NSMakeRect(xPos + (lastWeekOfMonth - weekOfYear) * cellSize,
-                                  yPos - kMonthNameYSpace - monthSize.height,
-                                  cellSize,
-                                  lastWeekdayOfMonth * cellSize + kMonthNameYSpace + monthSize.height));
-        }
-        
-        //  Draw the month name
-        [monthName drawInRect:NSMakeRect(xPos + (firstWeekOfMonth - weekOfYear + (firstWeekdayOfMonth == 1 ? 0 : 1)) * cellSize + self.gridSpace / 2.0 + self.gridBorderSize,
-                                         yPos - kMonthNameYSpace - monthSize.height,
-                                         monthSize.width, monthSize.height)
-               withAttributes:monthAttrs];
+    //  Iterate over the weeks in the year
+    for (NSUInteger weekIndex = 0; weekIndex < weeksInYear.length; ++weekIndex) {
+        for (NSUInteger weekday = 1; weekday <= 7; ++weekday) {
+            if (weekIndex == 0 && weekday < startWeekday)
+                continue;
 
-        //  Iterate over days in the month
-        for (NSUInteger day = 1; day <= daysInMonth.length; ++day) {
-            dateComps.day = day;
-            date = [self.calendar dateFromComponents:dateComps];
-            NSUInteger weekdayOfMonth = [self.calendar component:NSCalendarUnitWeekday fromDate:date];
-            NSUInteger dayWeekOfYear = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:date];
+            dateComps.weekOfYear = weekIndex + startWeekOfYear;
+            dateComps.weekday = weekday;
+            dateComps.yearForWeekOfYear = year;
+            
+            NSDate* date = [self.calendar dateFromComponents:dateComps];
             NSColor* dayColor = [self.dataSource yearView:self colorForDate:date];
+            NSUInteger month = [self.calendar component:NSCalendarUnitMonth fromDate:date];
+            NSUInteger day = [self.calendar component:NSCalendarUnitDay fromDate:date];
+            
+            if (weekIndex >= weeksInYear.length - 2 && month == startMonth && day > startDay)
+                continue;
 
-            if (dayWeekOfYear < firstWeekOfMonth)
-                dayWeekOfYear = weeksInYear.length - dayWeekOfYear + 1;
+            if (weekday == 1 && day < 8) {
+                NSUInteger month = [self.calendar component:NSCalendarUnitMonth fromDate:date];
+                NSString* monthName = months[month - 1];
+                if ((month == startMonthOfYear || month == 1) && self.showYears)
+                    monthName = [NSString stringWithFormat:@"%@ %d", monthName, (int)[self.calendar component:NSCalendarUnitYear fromDate:date]];
+                NSSize monthSize = [monthName sizeWithAttributes:monthAttrs];
 
-            [(dayColor ? dayColor : [NSColor lightGrayColor]) set];
-            NSRectFill(NSInsetRect(NSMakeRect(xPos + (dayWeekOfYear - weekOfYear) * cellSize, yPos + cellSize * (weekdayOfMonth - 1), cellSize, cellSize), self.gridBorderSize + self.gridSpace / 2.0, self.gridBorderSize + self.gridSpace / 2.0));
+                //  Draw the month name
+                [monthName drawInRect:NSMakeRect(xPos + weekIndex * cellSize + self.gridSpace / 2.0 + self.gridBorderSize,
+                                                 yPos - kMonthNameYSpace - monthSize.height,
+                                                 monthSize.width, monthSize.height)
+                       withAttributes:monthAttrs];
 
-            if (self.gridBorderSize > 0.0) {
-                [self.gridBorderColor set];
-                NSFrameRectWithWidth(NSInsetRect(NSMakeRect(xPos + (dayWeekOfYear - weekOfYear) * cellSize,
-                                                            yPos + cellSize * (weekdayOfMonth - 1), cellSize, cellSize),
-                                                            self.gridSpace / 2.0, self.gridSpace / 2.0), self.gridBorderSize);
             }
-
-            if ((self.dateFont || self.gridSize >= kMinGridSizeToShowDate) && self.showDates)
-                [[NSString stringWithFormat:@"%d", (int) day] drawInRect:NSInsetRect(NSMakeRect(xPos + (dayWeekOfYear - weekOfYear) * cellSize + 1.0, yPos + cellSize * (weekdayOfMonth - 1), cellSize, cellSize), self.gridBorderSize + self.gridSpace / 2.0, self.gridBorderSize + self.gridSpace / 2.0)
-                                                          withAttributes:@{NSFontAttributeName: self.dateFont ? self.dateFont : [NSFont systemFontOfSize:9.0],
-                                                                           NSForegroundColorAttributeName: self.dateTextColor}];
-
-            if (self.selectedDate && [self.calendar isDate:date inSameDayAsDate:self.selectedDate]) {
-                [[NSColor blackColor] set];
-                NSFrameRectWithWidth(NSInsetRect(NSMakeRect(xPos + (dayWeekOfYear - weekOfYear) * cellSize,
-                                                            yPos + cellSize * (weekdayOfMonth - 1), cellSize, cellSize),
-                                                            self.gridSpace / 2.0 - 1.0, self.gridSpace / 2.0 - 1.0), self.gridBorderSize + 2.0);
-            }
-        }
-    }
-    
-    //  Iterate over the months in the next year
-    //
-    //  No doubt there is a way to get this working with one loop, but I've found some edge cases when flipping from one
-    //  year to the next that have forced me to structure things in this way.  Hopefully in the future I can simplify
-    //  this code and avoid all this duplication.
-    dateComps.year += 1;
-    dateComps.month = 1;
-    dateComps.day = 1;
-
-    for (NSUInteger m = 1; m < monthOfYear; ++m, ++monthIndex) {
-        NSString* monthName = months[m - 1];
-        dateComps.month = m;
-        dateComps.day = 1;
-        NSDate* date = [self.calendar dateFromComponents:dateComps];
-        NSRange daysInMonth = [self.calendar rangeOfUnit:NSDayCalendarUnit
-                                                  inUnit:NSMonthCalendarUnit
-                                                 forDate:date];
-        if (m == 1 && self.showYears)
-            monthName = [NSString stringWithFormat:@"%@ %d", monthName, (int)[self.calendar component:NSCalendarUnitYear fromDate:date]];
-        NSSize monthSize = [monthName sizeWithAttributes:monthAttrs];
-        NSUInteger firstWeekOfMonth = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:date] - 1;
-        NSUInteger firstWeekdayOfMonth = [self.calendar component:NSCalendarUnitWeekday fromDate:date];
-        dateComps.day = daysInMonth.length;
-        date = [self.calendar dateFromComponents:dateComps];
-        NSUInteger lastWeekOfMonth = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:date] - 1;
-        NSUInteger lastWeekdayOfMonth = [self.calendar component:NSCalendarUnitWeekday fromDate:date];
-
-        //  Calculate the border of the month
-        if (self.usesAlternatingMonthBackgroundColors && alternatingMonthColors) {
-            [(NSColor*)alternatingMonthColors[monthIndex % alternatingMonthColors.count] set];
-            NSRectFill(NSMakeRect(xPos + (firstWeekOfMonth + weeksInYear.length - weekOfYear) * cellSize,
-                                  yPos + cellSize * (firstWeekdayOfMonth - 1) - (firstWeekdayOfMonth == 1 ? kMonthNameYSpace + monthSize.height : 0.0),
-                                  cellSize,
-                                  (kDaysInWeek + 1 - firstWeekdayOfMonth) * cellSize + (firstWeekdayOfMonth == 1 ? kMonthNameYSpace + monthSize.height : 0.0)));
-            NSRectFill(NSMakeRect(xPos + (firstWeekOfMonth + weeksInYear.length - weekOfYear + 1) * cellSize,
-                                  yPos - kMonthNameYSpace - monthSize.height,
-                                  (lastWeekOfMonth - firstWeekOfMonth - 1) * cellSize,
-                                  kDaysInWeek * cellSize + kMonthNameYSpace + monthSize.height));
-            NSRectFill(NSMakeRect(xPos + (lastWeekOfMonth + weeksInYear.length - weekOfYear) * cellSize,
-                                  yPos - kMonthNameYSpace - monthSize.height,
-                                  cellSize,
-                                  lastWeekdayOfMonth * cellSize + kMonthNameYSpace + monthSize.height));
-        }
-
-        //  Draw month name
-        [monthName drawInRect:NSMakeRect(xPos + (firstWeekOfMonth + weeksInYear.length - weekOfYear + (firstWeekdayOfMonth == 1 ? 0 : 1)) * cellSize + self.gridSpace / 2.0 + self.gridBorderSize,
-                                         yPos - kMonthNameYSpace - monthSize.height,
-                                         monthSize.width, monthSize.height)
-               withAttributes:monthAttrs];
-        
-        //  Iterate over days in the month
-        for (NSUInteger day = 1; day <= daysInMonth.length; ++day) {
-            dateComps.day = day;
-            date = [self.calendar dateFromComponents:dateComps];
-            NSUInteger weekdayOfMonth = [self.calendar component:NSCalendarUnitWeekday fromDate:date];
-            NSUInteger dayWeekOfYear = [self.calendar component:NSCalendarUnitWeekOfYear fromDate:date] - 1;
-            NSColor* dayColor = [self.dataSource yearView:self colorForDate:date];
-
+            
             [(dayColor ? dayColor : [NSColor lightGrayColor]) set];
-            NSRectFill(NSInsetRect(NSMakeRect(xPos + (dayWeekOfYear + weeksInYear.length - weekOfYear) * cellSize, yPos + cellSize * (weekdayOfMonth - 1), cellSize, cellSize), self.gridBorderSize + self.gridSpace / 2.0, self.gridBorderSize + self.gridSpace / 2.0));
+            NSRectFill(NSInsetRect(NSMakeRect(xPos + weekIndex * cellSize, yPos + cellSize * (weekday - 1), cellSize, cellSize), self.gridBorderSize + self.gridSpace / 2.0, self.gridBorderSize + self.gridSpace / 2.0));
             
             if (self.gridBorderSize > 0.0) {
                 [self.gridBorderColor set];
-                NSFrameRectWithWidth(NSInsetRect(NSMakeRect(xPos + (dayWeekOfYear + weeksInYear.length - weekOfYear) * cellSize, yPos + cellSize * (weekdayOfMonth - 1), cellSize, cellSize), self.gridSpace / 2.0, self.gridSpace / 2.0), self.gridBorderSize);
+                NSFrameRectWithWidth(NSInsetRect(NSMakeRect(xPos + weekIndex * cellSize,
+                                                            yPos + cellSize * (weekday - 1), cellSize, cellSize),
+                                                 self.gridSpace / 2.0, self.gridSpace / 2.0), self.gridBorderSize);
             }
-
+            
             if ((self.dateFont || self.gridSize >= kMinGridSizeToShowDate) && self.showDates)
-                [[NSString stringWithFormat:@"%d", (int) day] drawInRect:NSInsetRect(NSMakeRect(xPos + (dayWeekOfYear + weeksInYear.length - weekOfYear) * cellSize + 1.0, yPos + cellSize * (weekdayOfMonth - 1), cellSize, cellSize), self.gridBorderSize + self.gridSpace / 2.0, self.gridBorderSize + self.gridSpace / 2.0)
+                [[NSString stringWithFormat:@"%d", (int) day] drawInRect:NSInsetRect(NSMakeRect(xPos + weekIndex * cellSize + 1.0, yPos + cellSize * (weekday - 1), cellSize, cellSize), self.gridBorderSize + self.gridSpace / 2.0, self.gridBorderSize + self.gridSpace / 2.0)
                                                           withAttributes:@{NSFontAttributeName: self.dateFont ? self.dateFont : [NSFont systemFontOfSize:9.0],
                                                                            NSForegroundColorAttributeName: self.dateTextColor}];
             
             if (self.selectedDate && [self.calendar isDate:date inSameDayAsDate:self.selectedDate]) {
                 [[NSColor blackColor] set];
-                NSFrameRectWithWidth(NSInsetRect(NSMakeRect(xPos + (dayWeekOfYear + weeksInYear.length - weekOfYear) * cellSize,
-                                                            yPos + cellSize * (weekdayOfMonth - 1),
-                                                            cellSize, cellSize),
-                                                            self.gridSpace / 2.0 - 1.0, self.gridSpace / 2.0 - 1.0), self.gridBorderSize + 2);
+                NSFrameRectWithWidth(NSInsetRect(NSMakeRect(xPos + weekIndex * cellSize,
+                                                            yPos + cellSize * (weekday - 1), cellSize, cellSize),
+                                                 self.gridSpace / 2.0 - 1.0, self.gridSpace / 2.0 - 1.0), self.gridBorderSize + 2.0);
             }
         }
     }
@@ -413,20 +299,6 @@
         NSSize titleSize = [self.title sizeWithAttributes:monthAttrs];
         [self.title drawInRect:NSMakeRect(xPos, yPos + kDaysInWeek * cellSize + kLegentVSpace + (cellSize - titleSize.height) / 2.0, titleSize.width, titleSize.height) withAttributes:monthAttrs];
     }
-    
-#if 0
-    //  For MARK
-    NSArray* colors = [self.dataSource legendColorsForYearView:self];
-#if 1
-    NSColor* color1 = colors[2];
-    NSColor* color2 = [NSColor whiteColor]; // colors[1];
-    NSGradient* gradient = [[NSGradient alloc] initWithStartingColor:color1 endingColor:color2];
-#else
-    NSGradient* gradient = [[NSGradient alloc] initWithColors:[[[colors subarrayWithRange:NSMakeRange(1, colors.count - 1)] reverseObjectEnumerator] allObjects]];
-#endif
-    
-    [gradient drawFromCenter:NSMakePoint(xPos - 50, yPos) radius:20 toCenter:NSMakePoint(xPos - 50, yPos) radius:40.0 options:NSGradientDrawsBeforeStartingLocation];
-#endif
 }
 
 - (void)mouseDown:(NSEvent*) theEvent {
@@ -567,13 +439,6 @@
 - (void)setShowYears:(BOOL)showYears {
     if (self.showYears != showYears) {
         _showYears = showYears;
-        [self setNeedsDisplay:YES];
-    }
-}
-
-- (void)setUsesAlternatingMonthBackgroundColors:(BOOL)usesAlternatingMonthBackgroundColors {
-    if (self.usesAlternatingMonthBackgroundColors != usesAlternatingMonthBackgroundColors) {
-        _usesAlternatingMonthBackgroundColors = usesAlternatingMonthBackgroundColors;
         [self setNeedsDisplay:YES];
     }
 }

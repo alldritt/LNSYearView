@@ -31,7 +31,6 @@
 @property (assign, nonatomic) BOOL showWeekdays;
 @property (assign, nonatomic) BOOL showDates;
 @property (assign, nonatomic) BOOL showYears;
-@property (assign, nonatomic) BOOL usesAlternatingMonthBackgroundColors;
 @property (assign, nonatomic) BOOL selectable;
 @property (assign, nonatomic) BOOL drawsBackground;
 @property (assign, nonatomic) NSDate* selectedDate;
@@ -59,7 +58,6 @@
 
 - (NSArray*)weekdayNamesForYearView:(LNSYearView*) yearView;
 - (NSArray*)monthNamesForYearView:(LNSYearView*) yearView;
-- (NSArray*)alternatingMonthColorsForYearView:(LNSYearView*) yearView;
 
 @end
 

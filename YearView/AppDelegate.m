@@ -40,6 +40,8 @@ static NSUInteger sMaxValue = 0;
         }
     }
     
+    startDate = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitMonth value:-12 toDate:[NSDate date] options:0];
+
     sDatabase = [database copy]; // non-mutable version
     self.yearView.startDate = startDate;
 }
