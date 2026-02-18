@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/master.swiftdeps"
+  },
+  "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Tests/LNSCalendarHeatmapTests/HeatmapGridDataTests.swift": {
+    "dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/HeatmapGridDataTests.d",
+    "object": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/HeatmapGridDataTests.swift.o",
+    "swiftmodule": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/HeatmapGridDataTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/HeatmapGridDataTests.swiftdeps",
+    "diagnostics": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/HeatmapGridDataTests.dia"
+  }
+}

@@ -1,0 +1,752 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.xctest/Contents/MacOS/LNSCalendarHeatmapPackageTests",
+      "packagePath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap",
+      "productName" : "LNSCalendarHeatmapPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.LNSCalendarHeatmap-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/sources",
+      "importPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/Color+Interpolation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapDateRange.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGrid.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGridData.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapLegend.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapStyle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/LNSCalendarHeatmap.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "LNSCalendarHeatmap",
+      "moduleOutputPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules/LNSCalendarHeatmap.swiftmodule",
+      "objects" : [
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/Color+Interpolation.swift.o",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapDateRange.swift.o",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGrid.swift.o",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGridData.swift.o",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapLegend.swift.o",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapStyle.swift.o",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/LNSCalendarHeatmap.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/include/LNSCalendarHeatmap-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "lnscalendarheatmap"
+      ],
+      "outputFileMapPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/Color+Interpolation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapDateRange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGrid.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGridData.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapLegend.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapStyle.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/LNSCalendarHeatmap.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules/LNSCalendarHeatmap.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/Color+Interpolation.swift",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapDateRange.swift",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGrid.swift",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGridData.swift",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapLegend.swift",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapStyle.swift",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/LNSCalendarHeatmap.swift"
+      ],
+      "tempsPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.LNSCalendarHeatmapPackageTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/sources",
+      "importPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules/LNSCalendarHeatmapTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "LNSCalendarHeatmapPackageTests",
+      "moduleOutputPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules/LNSCalendarHeatmapPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/include/LNSCalendarHeatmapPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "lnscalendarheatmap"
+      ],
+      "outputFileMapPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules/LNSCalendarHeatmapPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.LNSCalendarHeatmapTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/sources",
+      "importPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Tests/LNSCalendarHeatmapTests/HeatmapGridDataTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules/LNSCalendarHeatmap.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "LNSCalendarHeatmapTests",
+      "moduleOutputPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules/LNSCalendarHeatmapTests.swiftmodule",
+      "objects" : [
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/HeatmapGridDataTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "lnscalendarheatmap"
+      ],
+      "outputFileMapPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/HeatmapGridDataTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules/LNSCalendarHeatmapTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Tests/LNSCalendarHeatmapTests/HeatmapGridDataTests.swift"
+      ],
+      "tempsPath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "LNSCalendarHeatmap" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "LNSCalendarHeatmap",
+      "-package-name",
+      "lnscalendarheatmap",
+      "-c",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/Color+Interpolation.swift",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapDateRange.swift",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGrid.swift",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGridData.swift",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapLegend.swift",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapStyle.swift",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/LNSCalendarHeatmap.swift",
+      "-I",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/include/LNSCalendarHeatmap-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "lnscalendarheatmap",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "LNSCalendarHeatmapPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "LNSCalendarHeatmapPackageTests",
+      "-package-name",
+      "lnscalendarheatmap",
+      "-c",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/include/LNSCalendarHeatmapPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "lnscalendarheatmap",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "LNSCalendarHeatmapTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "LNSCalendarHeatmapTests",
+      "-package-name",
+      "lnscalendarheatmap",
+      "-c",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Tests/LNSCalendarHeatmapTests/HeatmapGridDataTests.swift",
+      "-I",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "lnscalendarheatmap",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "LNSCalendarHeatmap" : [
+
+    ],
+    "LNSCalendarHeatmapPackageTests" : [
+      "LNSCalendarHeatmapTests",
+      "LNSCalendarHeatmap"
+    ],
+    "LNSCalendarHeatmapTests" : [
+      "LNSCalendarHeatmap"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/Color+Interpolation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapDateRange.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGrid.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGridData.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapLegend.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapStyle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/LNSCalendarHeatmap.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/sources"
+    },
+    "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/sources"
+    },
+    "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/Color+Interpolation.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapDateRange.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGrid.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGridData.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapLegend.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapStyle.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/LNSCalendarHeatmap.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/HeatmapGridDataTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Tests/LNSCalendarHeatmapTests/HeatmapGridDataTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmapTests.build/sources"
+    },
+    "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

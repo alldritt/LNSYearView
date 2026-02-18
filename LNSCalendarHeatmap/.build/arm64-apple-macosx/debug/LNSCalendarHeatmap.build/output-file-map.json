@@ -1,0 +1,54 @@
+{
+  "": {
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/master.swiftdeps"
+  },
+  "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/Color+Interpolation.swift": {
+    "dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/Color+Interpolation.d",
+    "object": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/Color+Interpolation.swift.o",
+    "swiftmodule": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/Color+Interpolation~partial.swiftmodule",
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/Color+Interpolation.swiftdeps",
+    "diagnostics": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/Color+Interpolation.dia"
+  },
+  "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapDateRange.swift": {
+    "dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapDateRange.d",
+    "object": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapDateRange.swift.o",
+    "swiftmodule": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapDateRange~partial.swiftmodule",
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapDateRange.swiftdeps",
+    "diagnostics": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapDateRange.dia"
+  },
+  "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGrid.swift": {
+    "dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGrid.d",
+    "object": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGrid.swift.o",
+    "swiftmodule": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGrid~partial.swiftmodule",
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGrid.swiftdeps",
+    "diagnostics": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGrid.dia"
+  },
+  "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapGridData.swift": {
+    "dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGridData.d",
+    "object": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGridData.swift.o",
+    "swiftmodule": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGridData~partial.swiftmodule",
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGridData.swiftdeps",
+    "diagnostics": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapGridData.dia"
+  },
+  "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapLegend.swift": {
+    "dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapLegend.d",
+    "object": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapLegend.swift.o",
+    "swiftmodule": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapLegend~partial.swiftmodule",
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapLegend.swiftdeps",
+    "diagnostics": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapLegend.dia"
+  },
+  "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/HeatmapStyle.swift": {
+    "dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapStyle.d",
+    "object": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapStyle.swift.o",
+    "swiftmodule": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapStyle~partial.swiftmodule",
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapStyle.swiftdeps",
+    "diagnostics": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/HeatmapStyle.dia"
+  },
+  "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/Sources/LNSCalendarHeatmap/LNSCalendarHeatmap.swift": {
+    "dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/LNSCalendarHeatmap.d",
+    "object": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/LNSCalendarHeatmap.swift.o",
+    "swiftmodule": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/LNSCalendarHeatmap~partial.swiftmodule",
+    "swift-dependencies": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/LNSCalendarHeatmap.swiftdeps",
+    "diagnostics": "/Users/mall/Sandboxes/LNS/LNSYearView/LNSCalendarHeatmap/.build/arm64-apple-macosx/debug/LNSCalendarHeatmap.build/LNSCalendarHeatmap.dia"
+  }
+}
